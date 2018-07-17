@@ -15,13 +15,13 @@
 
   <script type="text/javascript">
     // Create an array that lists out all of the options (A-Z)
-    var choices = ["a", "b", "c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+    var letters = ["a", "b", "c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
     // Creating variables to hold the number of wins, losses, guess, guesses left.
     var wins = 0;
     var losses = 0;
     var guess = 0;
-    var guessleft = 0
+    var guessleft = 0;
 
     // This function is run whenever the user presses a key.
     document.onkeyup = function(event) {
@@ -30,24 +30,24 @@
       var userGuess = event.key;
 
       // Randomly chooses a choice from the options array. This is the Computer's guess.
-      var choices = choices[Math.floor(Math.random() * choices.length)];
+      var computerChoice= letters[Math.floor(Math.random() * letters.length)];
     }
 
       // This logic determines the outcome of the game( wether or not user has guessed properly).
 
-        if (userGuess === choices) {
+        if (userGuess === computerChoice) {
           wins++;
         }
          
-        else if (userGuess !== choices) {              
-          losses++;
+        else if (userGuess !== computerChoice) {              
+          for (var i=0; i>10; i++);
         } 
         
         
 
         // Creating a variable to hold our new HTML. Our HTML now keeps track of the user and computer guesses, and wins/losses/ties.
         var html =
-          "<p>You chose: " + userGuess + event.key "</p>" 
+          "<p>You have chosen: " + userGuess + event.key "</p>" 
           
           // this should list all guesses...
             // if a win is made the game ends
@@ -62,6 +62,7 @@
         document.querySelector("#game").innerHTML = html;
       }
     };
+    
   </script>
 
 </body>
