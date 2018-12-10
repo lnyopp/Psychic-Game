@@ -24,7 +24,7 @@
       // This logic determines the outcome of the game( wether or not user has guessed properly).
         // If statement so that user cannot guess the same letter twice
         if(guess.includes(userGuess)){
-            alert("Choose another letter, You may only guess the same letter once.")
+            alert("Choose another letter. You may only guess a letter once.")
             guess.pop();
         };
        
