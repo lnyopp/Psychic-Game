@@ -22,7 +22,12 @@
     
 
       // This logic determines the outcome of the game( wether or not user has guessed properly).
-
+        // If statement so that user cannot guess the same letter twice
+        if(guess.includes(userGuess)){
+            alert("Choose another letter, You may only guess the same letter once.")
+            guess.pop();
+        };
+       
        if(letters.includes(userGuess)){
 
        if (userGuess === computerChoice) {
@@ -51,6 +56,7 @@
         }
     }
 
+    
         // Creating a variable to hold our new HTML. Our HTML now keeps track of the user and computer guesses, and wins/losses/ties.
         var html =
             "<h1> Psychic Game </h1>"+
@@ -59,7 +65,7 @@
          
           "<p> wins: " + wins + "</p>" +
           "<p> losses: " + losses + "</p>" +
-          "<p> Gusses Remaining: " + guessLeft + "</p>"+
+          "<p> Guesses Remaining: " + guessLeft + "</p>"+
           "<p> Previous Guesses:  " + guess + "</p>";
 
           // a string is how you keep track of html in javascript. 
